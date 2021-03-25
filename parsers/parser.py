@@ -10,7 +10,7 @@ class Parser:
         self._data: List[Dict] = []
 
     def read(self, files: List[str]):
-        """stub for a parser method that reads in a list of files given their paths"""
+        """stub for a parsers method that reads in a list of files given their paths"""
 
     @property
     def data(self) -> List[Dict]:
