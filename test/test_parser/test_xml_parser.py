@@ -3,13 +3,13 @@ import unittest
 from unittest.mock import MagicMock
 from unittest.mock import patch
 
-from parsers import XMLParser
+from tr.parsers.xml_parser import XMLParser
 
 
 class TestXMLParser(unittest.TestCase):
 
     @patch('os.path.exists')
-    @patch('parsers.xml_parser.open')
+    @patch('tr.parsers.xml_parser.open')
     def test_read(self, mock_open: MagicMock, mock_exists: MagicMock):
         mock_exists.return_value = True
         mock_read = MagicMock()

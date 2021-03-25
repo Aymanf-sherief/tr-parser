@@ -5,7 +5,7 @@ import os
 from itertools import groupby
 from typing import Tuple
 
-from parsers.parser import Parser
+from tr.parsers.parser import Parser
 
 logger = logging.getLogger(__name__)
 

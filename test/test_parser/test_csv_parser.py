@@ -4,14 +4,13 @@ from io import StringIO
 from unittest.mock import MagicMock
 from unittest.mock import patch
 
-from parsers import XMLParser
-from parsers.csv_parser import CSVParser
+from tr.parsers.csv_parser import CSVParser
 
 
 class TestXMLParser(unittest.TestCase):
 
     @patch('os.path.exists')
-    @patch('parsers.csv_parser.open')
+    @patch('tr.parsers.csv_parser.open')
     def test_read(self, mock_open: MagicMock, mock_exists: MagicMock):
         mock_exists.return_value = True
         mock_open.return_value.__enter__.side_effect = [StringIO("""

@@ -6,7 +6,7 @@ from typing import List
 
 import xmltodict
 
-from parsers.parser import Parser
+from tr.parsers.parser import Parser
 
 logger = logging.getLogger(__name__)
 
