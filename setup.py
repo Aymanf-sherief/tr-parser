@@ -21,11 +21,6 @@ setuptools.setup(
 
     install_requires=install_requires,
 
-    setup_requires=[
-        'pytest-runner',
-        'pytest-pylint'
-    ],
-
     entry_points={
         'console_scripts': [
             'tr-parser=tr.tool:parser_tool',
