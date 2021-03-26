@@ -36,7 +36,7 @@ class CSVParser(Parser):
 
         customers = sorted(customers, key=lambda c: (c['transaction']['customer']['id']))
         vehicles = sorted(vehicles, key=lambda v: (v['owner_id']))
-        for owner_index, (owner_id, vehicle_group) in enumerate(groupby(vehicles, key=lambda v: v['owner_id'])):
+        for owner_index, (_, vehicle_group) in enumerate(groupby(vehicles, key=lambda v: v['owner_id'])):
             customer_vehicles = []
             for v in vehicle_group:
                 del v['owner_id']

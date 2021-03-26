@@ -29,7 +29,7 @@ def xml_to_json(files: List[str], output_file: str = typer.Option('customers.jso
         if not file.endswith('xml'):
             invalid_files.append(file)
     if invalid_files:
-        logger.warning("Files %s have an unsupported extension, the tool will attempt converting...")
+        logger.warning("Files %s have an unsupported extension, the tool will attempt converting...", invalid_files)
 
     parser = XMLParser()
     parser.read(files)
@@ -54,6 +54,12 @@ def csv_to_json(files: Tuple[str, str], output_file: str = typer.Option('custome
     :param formatted: whether to format json output
     """
     logger.info("converting files %s from csv to json", files)
+    invalid_files = []
+    for file in files:
+        if not file.endswith('csv'):
+            invalid_files.append(file)
+    if invalid_files:
+        logger.warning("Files %s have an unsupported extension, the tool will attempt converting...", invalid_files)
 
     parser = CSVParser()
     parser.read(files)

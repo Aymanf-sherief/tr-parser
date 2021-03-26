@@ -33,7 +33,8 @@ class XMLParser(Parser):
                         data = {'file_name': path}
                         data.update(xmltodict.parse(xml_file.read()))
                         self._data.append(self.format_data(data))
-                except Exception as ex:
+                # deliberately catching any possible exception ans skipping, disabling pylint warning
+                except Exception as ex:  # pylint: disable=broad-except
                     logger.error("Couldn't parse xml file %s , moving on...", path, exc_info=ex)
             else:
                 logger.error("Couldn't find xml file %s , moving on...", path)
